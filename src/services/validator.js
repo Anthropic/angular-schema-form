@@ -14,7 +14,7 @@ angular.module('schemaForm').factory('sfValidator', [function() {
    * @return a tv4js result object.
    */
   validator.validate = function(form, value) {
-    if (!form) {
+    if (!form || form.allowInvalid === true) {
       return {valid: true};
     }
     var schema = form.schema;
